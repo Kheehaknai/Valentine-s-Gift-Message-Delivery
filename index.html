@@ -37,16 +37,26 @@
         <a href="#home">home</a>
         <a href="#about">about</a>
         <a href="#products">products</a>
+        <a href="#message">message</a>
         <a href="#review">review</a>
         <a href="#contact">contact</a>
     </nav>
 
-    <div class="icons">
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" class="fas fa-user"></a>
-    </div>
+    
 
+    <div class="icons">
+    
+
+    <img src="imges/icon/user.png" alt="wishlist" style="width: 24px; height: 22px; object-fit: contain; cursor: default; margin-right: 20px; ">
+
+    <img src="imges/icon/daisy-alt.png" alt="wishlist" style="width: 24px; height: 22px; object-fit: contain; cursor: default; ; ">
+
+    <a href="javascript:void(0)" class="fas fa-shopping-cart" style="position:relative;" onclick="toggleCart()">
+        <span id="cart-count" class="badge" style="display:none;">0</span>
+    </a>
+    
+   
+</div>
      </header>
     
 
@@ -61,7 +71,7 @@
             <span>Love in Every Petal</span>
             <p>More than just flowers. Send your heart through handcrafted bouquets, personalized letters, and timeless gifts delivered straight to your special someone.
             </p>
-            <a href="#" class="btn">shopnow</a>
+            <a href="#products" class="btn">shopnow</a> 
         </div>
 
     </section>
@@ -98,7 +108,7 @@
 
     <section class="icons-container">
 
-    <div class="icons"> 
+    <div class="icons" onclick="openDeliveryModal()" style="cursor:pointer;"> 
         <img src="imges/icon/package.png" alt="">
         <div class="info">
             <h3>free delivery</h3>
@@ -106,7 +116,7 @@
         </div>
     </div>   
 
-    <div class="icons"> 
+    <div class="icons" onclick="openReturnPolicy()" style="cursor:pointer;"> 
         <img src="imges/icon/money-bag.png" alt="">
         <div class="info">
             <h3>10 days returns</h3>
@@ -114,34 +124,31 @@
         </div>
     </div>   
 
-
-    <div class="icons"> 
+    <div class="icons" onclick="openGiftGuide()" style="cursor:pointer;"> 
         <img src="imges/icon/love-letter.png" alt="">
         <div class="info">
-            <h3>For Cards & Letters:</h3>
-            <span>Send to write a message</span>
+            <h3>Gift Finder</h3>
+            <span>Recommend for you</span>
         </div>
     </div>   
 
-
-    <div class="icons"> 
+    <div class="icons" onclick="window.location.href='pre-order.html'" style="cursor:pointer;"> 
         <img src="imges/icon/surprise.png" alt="">
         <div class="info">
             <h3>offer & gifts</h3>
-            <span>on all orderse</span>
+            <span>Rare & Pre-order</span>
         </div>
     </div>   
 
+    <div class="icons" onclick="toggleWallet()" style="cursor:pointer;"> 
+    <img src="imges/icon/wallet.png" alt="Luvia Wallet">
+    <div class="info">
+        <h3>Luvia Coins</h3>
+        <span>Secure & Top-Up</span>
+    </div>
+</div>
 
-    <div class="icons"> 
-        <img src="imges/icon/wallet.png" alt="">
-        <div class="info">
-            <h3>secure payments</h3>
-            <span>protected by paypal</span>
-        </div>
-    </div>   
-
-    </section>
+</section>
 
     <!-- icon section ends-->
 
@@ -161,7 +168,7 @@
                 <a href="#products" class="btn">Join Event</a>
             </div>
             <div class="banner-image">
-                <img src="imges/a69a200f7663c30bf38f683fabfa2025.jpg" alt="Promotion Banner">
+                <img src="imges/flowetyy.jpg" alt="Promotion Banner">
             </div>
         </div>
 
@@ -170,15 +177,15 @@
             <div class="slider-wrapper">
 
             <div class="promo-item">
-            <img src="imges/flower/f1 (12).jpg" alt="Hot Item">
-            <div class="item-tag">Hot Item🔥</div>
-            <div class="item-info">
+               <img src="imges/flower/f1 (12).jpg" alt="Hot Item" onclick="addToWishlist('Classic Red Rose')">
+              <div class="item-tag">Hot Item🔥</div>
+               <div class="item-info">
              <p class="description">Classic red rose bouquet Special discount only for this month of love!</p>
            </div>
         </div>
 
         <div class="promo-item">
-           <img src="imges/flower/f1 (12).jpg" alt="Birthday Special">
+           <img src="imges/flower/f1 (13).jpg" alt="Birthday Special" onclick="addToWishlist('Giving brightness')">
            <div class="item-tag">Birthday</div>
            <div class="item-info">
             <p class="description">Giving brightness on your birthday With a basket of sunflowers as a blessing</p>
@@ -186,7 +193,7 @@
        </div>
 
        <div class="promo-item">
-            <img src="imges/flower/f1 (12).jpg" alt="Monthly Promo">
+            <img src="imges/flower/f1 (14).jpg" alt="Monthly Promo" onclick="addToWishlist('Imported tulips')">
             <div class="item-tag">Limited</div>
             <div class="item-info">
             <p class="description">Imported tulips. Buy 1 Get 1 promotion only this week!</p>
@@ -194,7 +201,8 @@
         </div>
 
       <div class="promo-item">
-            <img src="imges/flower/f1 (12).jpg"alt="Gift Card">
+            <img src="imges/flower/f1 (1).jpg"alt="Gift Card"
+            onclick="addToWishlist('Handmade card set')">
             <div class="item-tag">Gift Card</div>
             <div class="item-info">
              <p class="description">Handmade card set with a free message when purchasing 30.99$</p>
@@ -202,7 +210,8 @@
       </div>
 
       <div class="promo-item">
-            <img src="imges/flower/f1 (12).jpg"alt="Respect">
+            <img src="imges/flower/f1 (2).jpg"alt="Respect"
+            onclick="addToWishlist('Luxurious design orchid')">
             <div class="item-tag">Premium</div>
             <div class="item-info">
              <p class="description">Luxurious design orchid basket Suitable for giving to adults on important occasions.</p>
@@ -210,7 +219,8 @@
       </div>
 
       <div class="promo-item">
-           <img src="imges/flower/f1 (12).jpg" alt="Sorry">
+           <img src="imges/flower/f1 (7).jpg" alt="Sorry"
+           onclick="addToWishlist('Tiny white gypsophila flowers')">
            <div class="item-tag">Best Pick</div>
            <div class="item-info">
            <p class="description">Tiny white gypsophila flowers Instead of a sincere apology Let him smile again.</p>
@@ -218,15 +228,17 @@
       </div>
 
       <div class="promo-item">
-          <img src="imges/flower/f1 (12).jpg"alt="Congratulation">
+          <img src="imges/flower/f1 (8).jpg"alt="Congratulation"
+          onclick="addToWishlist('Dried flower')">
           <div class="item-tag">Graduation</div>
           <div class="item-info">
-          <p class="description">dried flower bouquet Can be stored for a long time Instead of good memories On graduation day</p>
+          <p class="description">Dried flower bouquet Can be stored for a long time Instead of good memories On graduation day</p>
         </div>
       </div>
 
       <div class="promo-item">
-           <img src="imges/flower/f1 (12).jpg"alt="Home Decor">
+           <img src="imges/flower/f1 (11).jpg"alt="Home Decor"
+           onclick="addToWishlist('Daisies in a minimalist pot')">
            <div class="item-tag">New</div>
            <div class="item-info">
            <p class="description">Daisies in a minimalist pot Help add positive energy to your desk.</p>
@@ -255,11 +267,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (1).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Sunny Pot', 12.99, 'imges/pot/pA (1).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Sunny Pot</h4>
@@ -271,11 +283,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (2).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Rosie Pot', 13.19, 'imges/pot/pA (2).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Rosie Pot</h4>
@@ -288,11 +300,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (10).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Daisy Dew', 11.12, 'imges/pot/pA (10).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Daisy Dew</h4>
@@ -305,11 +317,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (7).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('>Blue Sky', 12.57, 'imges/pot/pA (7).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Blue Sky</h4>
@@ -323,11 +335,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (5).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Sweet Violet', 10.89, 'imges/pot/pA (5).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Sweet Violet</h4>
@@ -340,11 +352,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (6).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Pinky Bloom', 16.12, 'imges/pot/pA (6).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Pinky Bloom</h4>
@@ -357,11 +369,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (12).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Luvia Soft', 15.70, 'imges/pot/pA (12).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Luvia Soft</h4>
@@ -374,11 +386,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (8).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Amber Vase', 19.19, 'imges/pot/pA (8).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Amber Vase</h4>
@@ -391,11 +403,11 @@
                 <span class="discount">-10%</span>
                 <div class="image">
                     <img src="imges/pot/pA (11).jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">add to cart</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
+                <div class="icons">
+                    <a href="javascript:void(0)" class="fas fa-heart"></a>
+                    <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('Lily Cup', 18.32, 'imges/pot/pA (11).jpg')">add to cart</a>
+                    <a href="javascript:void(0)" class="fas fa-share"></a>
+                </div>
                 </div>
                 <div class="content">
                     <h4>Lily Cup</h4>
@@ -424,12 +436,16 @@
 
             <div class="mini-slider">
                 <div class="mini-wrapper">
-                    <img src="imges/flower/f1 (11).jpg" alt="">
-                    <img src="imges/flower/f1 (11).jpg" alt="">
-                    <img src="imges/flower/f1 (11).jpg" alt="">
-                    <img src="imges/flower/f1 (11).jpg" alt="">
-                    <img src="imges/flower/f1 (11).jpg" alt="">
-                    <img src="imges/flower/f1 (11).jpg" alt="">
+                    <img src="imges/gift set1/T1 (30).jpg" alt="">
+                    <img src="imges/gift set1/T1 (5).jpg" alt="">
+                    <img src="imges/gift set1/T1 (1).jpg" alt="">
+                    <img src="imges/gift set1/T1 (3).jpg" alt="">
+                    <img src="imges/gift set1/T1 (30).jpg" alt="">
+                    <img src="imges/gift set1/T1 (13).jpg" alt="">
+                    <img src="imges/gift set1/T1 (17).jpg" alt="">
+                    <img src="imges/gift set1/T1 (29).jpg" alt="">
+                    <img src="imges/gift set1/T1 (36).jpg" alt="">
+                    <img src="imges/gift set1/T1 (1).jpg" alt="">
                 </div>
             </div>
         </div>
@@ -448,23 +464,211 @@
                 <span class="title">Join us in spreading happiness. Whether it's a bouquet or a small note, every gift tells a story.</span>
             </div>
 
-            
             <div class="btn-container">
-                <a href="#products" class="btn">Explore Flowers</a>
-                <a href="#contact" class="btn secondary-btn">Create a Note</a>
+              <button class="btn" onclick="openMoodModal()">Pick a Mood</button>
+              <button class="btn secondary-btn" onclick="showWishlistInfo()">Save to Wishlist</button>
             </div>
+
+            <div class="mood-modal" id="moodModal">
+            <div class="mood-content">
+            <span class="close-mood" onclick="closeMoodModal()">&times;</span>
+                <h3>How do you feel today? ✨</h3>
+              <div class="mood-grid">
+              <div class="mood-item" onclick="filterByMood('happy')">
+                <span>😊</span> <p>Very happy</p>
+              </div>
+              <div class="mood-item" onclick="filterByMood('sorry')">
+                <span>🥺</span> <p>I want to apologize</p>
+               </div>
+               <div class="mood-item" onclick="filterByMood('love')">
+                <span>💖</span> <p>Secretly in love</p>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
 
     </div>
 </section>
     <!-------------Event & Story end------->
 
+    <!-------------------Gift Sets ----------------->
+    <section class="special-gifts" id="gifts">
+    <h4 class="heading">❤ Valentine's <span>Special Sets ❤</span> </h4>
+
+    <div class="gift-grid-wrapper">
+        
+        <div class="gift-card big-gift" onclick="addToCart('Grand Teddy Bear', 1590, 'imges/gif/G1 (5).jpg')" style="cursor: pointer;">
+            <span class="discount-tag">Special! -40%
+                <p class="promo-expire">There are only 2 days left!</p>
+            </span>
+             <div class="image-box"><img src="imges/gift set1/T1 (26).jpg"></div>
+            <div class="gift-info"><h3>Luxury Love Set</h3><span>฿359</span></div>
+        </div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (1).jpg')" style="cursor: pointer;">
+            <div class="image-box"><img src="imges/gif/G1 (1).jpg"></div>
+            <div class="gift-info"><h4>Mini Gift</h4><span>฿90</span></div>
+        </div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Sweetie', 350, 'imges/gif/G1 (2).jpg')" style="cursor: pointer;">
+            <div class="image-box"><img src="imges/gif/G1 (2).jpg"></div>
+            <div class="gift-info"><h4>Sweetie</h4><span>฿85</span></div>
+        </div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Hand Card', 120, 'imges/gif/G1 (3).jpg')" style="cursor: pointer;">
+            <div class="image-box"><img src="imges/gif/G1 (3).jpg"></div>
+            <div class="gift-info"><h4>Hand Card</h4><span>฿79</span></div>
+        </div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Couple Cup', 490, 'imges/gif/G1 (4).jpg')" style="cursor: pointer;">
+            <div class="image-box"><img src="imges/gif/G1 (4).jpg"></div>
+            <div class="gift-info"><h4>Couple Cup</h4><span>฿69</span></div>
+        </div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Sweet Box', 990, 'imges/gif/G1 (6).jpg')" style="cursor: pointer;">
+            <div class="image-box"><img src="imges/gif/G1 (6).jpg"></div>
+            <div class="gift-info"><h4>Sweet Box</h4><span>฿99</span></div>
+        </div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Love Lamp', 650, 'imges/gif/G1 (7).jpg')" style="cursor: pointer;">
+            <div class="image-box"><img src="imges/gif/G1 (7).jpg"></div>
+            <div class="gift-info"><h4>Love Lamp</h4><span>฿81</span></div>
+        </div>
+
+        <div class="gift-card big-gift" onclick="addToCart('Luxury Love Set', 2990, 'imges/gif/G1 (8).jpg')" style="cursor: pointer;">
+            <span class="discount-tag">Special! -60%
+                <p class="promo-expire">Discount promotion only today!</p>
+            </span>
+            <div class="image-box"><img src="imges/gift set1/T1 (33).jpg"></div>
+            <div class="gift-info"><h3>Luxury Love Set</h3><span>฿299</span></div>
+        </div>
+
+
+
+        <!---two-->
+         <div class="gift-card big-gift" onclick="addToCart('Grand Teddy Bear', 1590, 'imges/gif/G1 (5).jpg')" style="cursor: pointer;">
+            <span class="discount-tag">Special! -20%
+                <p class="promo-expire">Handmade products, weekend discounts</p>
+            </span>
+            <div class="image-box"><img src="imges/gift set1/T1 (35).jpg"></div>
+            <div class="gift-info"> <h3>Pink Bear</h3><span>฿90</span></div>
+        </div>
+
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (1).jpg')" style="cursor: pointer;"><div class="image-box"><img src="imges/gif/G1 (10).jpg"></div><div class="gift-info"><h4>Mini Box</h4><span>฿64</span></div></div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (2).jpg')" style="cursor: pointer;"><div class="image-box"><img src="imges/gif/G1 (11).jpg"></div><div class="gift-info"><h4>Sweetie & Sexy</h4><span>฿98</span></div></div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (3).jpg')" style="cursor: pointer;"><div class="image-box"><img src="imges/gif/G1 (12).jpg"></div><div class="gift-info"><h4>Hand Made</h4><span>฿70</span></div></div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (4).jpg')" style="cursor: pointer;"><div class="image-box"><img src="imges/gif/G1 (14).jpg"></div><div class="gift-info"><h4>Couple Gift</h4><span>฿73</span></div></div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (6).jpg')" style="cursor: pointer;"><div class="image-box"><img src="imges/gif/G1 (15).jpg"></div><div class="gift-info"><h4>Sweet Boy</h4><span>฿87</span></div></div>
+
+        <div class="gift-card small-gift" onclick="addToCart('Mini Gift', 290, 'imges/gif/G1 (7).jpg')" style="cursor: pointer;"><div class="image-box"><img src="imges/gif/G1 (20).jpg"></div><div class="gift-info"><h4>Lovely</h4><span>฿65</span></div></div>
+
+        <div class="gift-card big-gift" onclick="addToCart('Luxury Love Set', 2990, 'imges/gif/G1 (8).jpg')" style="cursor: pointer;">
+            <span class="discount-tag">Special! -10%
+                <p class="promo-expire">Only 10 pieces available, hurry and buy them quickly.</p>
+            </span>
+            <div class="image-box"><img src="imges/gift set1/T1 (25).jpg"></div>
+            <div class="gift-info"><h3>Cool and seductive outfit</h3><span>฿460</span></div>
+        </div>
+
+    </div>
+</section>
+    <!-------------------Gift end ----------------->
+
+
+
+    <!------------------Digital Love Letter----------------->
+<section class="message" id="message">
+    <div class="letter-guide-section">
+    <h2 class="section-title">Pass on your feelings in 3 easy steps.</h2>
+    
+    <div class="steps-container">
+        <div class="step-card">
+            <div class="step-icon">1</div>
+            <h4>Choose the right pattern</h4>
+            <p>Choose your favorite letter paper from 10 styles we have prepared for you.</p>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-icon">2</div>
+            <h4>Write your feelings</h4>
+            <p>Express your feelings through letters on a special page.</p>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-icon">3</div>
+            <h4>Add to cart</h4>
+            <p>Record a letter with Magic Sparkle sound and prepare it to send to someone special.</p>
+        </div>
+    </div>
+
+    <div class="main-action">
+        <button class="btn" id="createNoteBtn">Create A Note</button>
+    </div>
+</div>
+    <!-------------------แนะนำขั้นตอน---------------------->
+
+<div class="letter-modal" id="letterModal">
+    <div class="letter-container">
+        <span class="close-btn" onclick="closeLetter()">&times;</span>
+        
+        <div class="letter-wrapper">
+            <div class="letter-selector">
+                <h3>Choose a letter style</h3>
+
+
+                <div class="style-grid">
+                <img src="imges/card/c1 (1).jpg" onclick="changeTemplate('imges/card/c1 (1).jpg')" alt="แบบที่ 1">
+                <img src="imges/card/c1 (2).jpg" onclick="changeTemplate('imges/card/c1 (2).jpg')" alt="แบบที่ 2">
+                <img src="imges/card/c1 (3).jpg" onclick="changeTemplate('imges/card/c1 (3).jpg')" alt="แบบที่ 3">
+                 <img src="imges/card/c1 (4).jpg" onclick="changeTemplate('imges/card/c1 (4).jpg')" alt="แบบที่ 4">
+                <img src="imges/card/c1 (5).jpg" onclick="changeTemplate('imges/card/c1 (5).jpg')" alt="แบบที่ 5">
+                <img src="imges/card/c1 (6).jpg" onclick="changeTemplate('imges/card/c1 (6).jpg')" alt="แบบที่ 6">
+                 <img src="imges/card/c1 (7).jpg" onclick="changeTemplate('imges/card/c1 (7).jpg')" alt="แบบที่ 7">
+                <img src="imges/card/c1 (8).jpg" onclick="changeTemplate('imges/card/c1 (8).jpg')" alt="แบบที่ 8">
+                <img src="imges/card/c1 (9).jpg" onclick="changeTemplate('imges/card/c1 (9).jpg')" alt="แบบที่ 9">
+                </div>
+                    
+            </div>
+
+            <div class="letter-paper" id="paperDisplay">
+                <textarea class="letter-input" id="userMessage" placeholder="เขียนบอกรักตรงนี้..."></textarea>
+                <div class="btn-group">
+                    <button class="btn" onclick="saveToCart()">Save to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-----------สำหรับกล่องของขวัญเด้ง-------------->
+<div class="success-modal" id="successModal">
+    <div class="success-content">
+        <img src="https://cdn-icons-png.flaticon.com/512/1139/1139982.png" alt="Gift Box" class="gift-icon">
+        <h2>Memories recorded!</h2>
+        <p>Your love letter has been placed in your cart and ready to be sent. ❤️</p>
+        <button class="btn" onclick="closeSuccess()">ตกลง</button>
+    </div>
+</div>
+
+<audio id="successSound" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3" preload="auto"></audio>
+
+</section>
+
+     <!---------------Digital Love Letter end--------------->
 
 
     <!--  review section starts   -->
 
 
-    <section class="review" dir="review">
+    <section class="review" id="review"> 
         <h1 class="heading">customer's <span>review</span></h1>
 
         <div class="box-container">
@@ -633,6 +837,33 @@
     </section>
     <!--  contact section ends   -->
 
+<!-------ตระกร้า--------->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-wrapper">
+        <span class="close-cart" onclick="closeCart()">&times;</span>
+        
+        <h1 class="heading" style="margin-bottom: 2rem; font-size: 3rem;"> Your <span>Selection</span> </h1>
+
+        <div class="cart-container-layout">
+            <div class="cart-items-scroll" id="cartItemsList">
+                <p class="empty-msg">The basket is empty... Choose the gift you like first.</p>
+            </div>
+
+            <div class="cart-summary">
+                <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Order Summary</h3>
+                <div class="summary-row"><span>Subtotal:</span> <span id="subtotalPrice">฿0</span></div>
+                <div class="summary-row"><span>Delivery:</span> <span class="free" style="color: green;">Free</span></div>
+                <hr style="margin: 1.5rem 0; border: .1rem solid rgba(0,0,0,.1);">
+                <div class="summary-row total">
+                    <span>Total:</span> 
+                    <span id="cartTotalPrice" style="color: var(--pink); font-size: 2.5rem;">฿0</span>
+                </div>
+                <button class="btn checkout-btn" style="width: 100%; margin-top: 2rem; padding: 1.5rem;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------------------------------------->
 
     <!--  footer section starts   -->
 
@@ -659,7 +890,7 @@
                 <h4>locations</h4>
                 <a href="#">india</a>
                 <a href="#">USA</a>
-                <a href="#">Preducts</a>
+                <a href="#">Products</a>
                 <a href="#">Japan</a>
                 <a href="#">Thailand</a>
                 <a href="#">france</a>
@@ -670,17 +901,97 @@
                 <a href="#">064-269-5893</a>
                 <a href="#">treepalmy3@gmail.com</a>
                 <a href="#">bammy, Thailand - 123007</a>
-                <img src="imges/payment.png" alt="">
             </div>
             
         </div>
 
-        <div class="credit"> created by <span> kheehaknai. wed desiner | all rights reserved</span></div>
+        <div class="payment-methods"><div>
+
+        <div class="credit"> created by <span> kheehaknai. wed desiner | all rights reserved</span>
+        </div>
     </section>
 
     <!--  footer section ends   -->
 
 
-<script src="js/script.js"></script>
+
+    <!---------------Delivery Info----------------->
+
+    <div id="serviceModal" class="cart-modal" style="display:none; z-index: 3000;">
+    <div class="cart-wrapper" id="serviceModalWrapper" style="max-width: 850px; width: 95%; padding: 0; border-radius: 2rem; overflow: hidden; background: #fff;">
+        <span class="close-cart" onclick="closeServiceModal()" style="top: 2rem; right: 2rem; font-size: 4rem; z-index: 100;">&times;</span>
+        
+        <div id="serviceContent">
+            </div>
+    </div>
+</div>
+
+
+<!------------------------------------------------>
+<div id="wallet-modal" class="modal">
+    <div class="wallet-container">
+        <span onclick="toggleWallet()" class="close-wallet">&times;</span>
+        
+        <i class="fas fa-wallet wallet-icon"></i>
+        <h2>Luvia Wallet</h2>
+        
+        <div class="coin-card">
+            <p>Coin balance remaining</p>
+            <h1><span id="user-coins">0</span> <small>LC</small></h1>
+        </div>
+
+        <button onclick="showTopUp()" class="btn-topup">Top Up (add coin)</button>
+        <p class="discount-note">Pay with coins Get an instant 5% discount</p>
+    </div>
+</div>
+
+<div id="topup-modal" class="modal">
+    <div class="topup-container">
+        <h3>Scan to Top Up</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=LuviaCoin" alt="QR Code">
+        <p>100 dollars gets 100 LC</p>
+        <button onclick="simulateTopUp()" class="btn-confirm">Confirm payment</button>
+        <button onclick="closeTopUp()" class="btn-cancel">Cancel</button>
+    </div>
+</div>
+
+<!---------------Delivery Info ends----------------->
+
+
+<!---------สินค้าที่ถูกใจ---------------->
+ <div id="wishlist-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:5000; justify-content:center; align-items:center;">
+    <div style="background:#fff; width:90%; max-width:400px; padding:2rem; border-radius:1.5rem; position:relative;">
+        <span onclick="toggleWishlist()" style="position:absolute; top:1rem; right:1.5rem; font-size:3rem; cursor:pointer; color:#999;">&times;</span>
+        <h2 style="font-size:2rem; color:var(--pink); margin-bottom:1.5rem; border-bottom:2px solid #f5f5f5; padding-bottom:1rem;">Favorites ❤️</h2>
+        
+        <div id="wishlist-items-list" style="max-height:300px; overflow-y:auto;">
+            </div>
+    </div>
+</div>
+
+
+<!--------------------Floating Button------------------>
+<div id="floating-wishlist" onclick="toggleWishlist()" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; cursor: pointer;">
+    <div style="background: var(--pink); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); position: relative;">
+        <i class="fas fa-heart" style="color: white; font-size: 25px;"></i>
+        <span id="wishlist-count-float" style="position: absolute; top: -5px; right: -5px; background: #333; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; justify-content: center; align-items: center; font-size: 12px; display: none;">0</span>
+    </div>
+</div>
+
+<div id="wishlist-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:#fff; width:90%; max-width:400px; padding:2rem; border-radius:1.5rem; position:relative;">
+        <span onclick="toggleWishlist()" style="position:absolute; top:1rem; right:1.5rem; font-size:3rem; cursor:pointer; color:#999;">&times;</span>
+        <h2 style="font-size:2rem; color:var(--pink); margin-bottom:1.5rem; border-bottom:2px solid #f5f5f5; padding-bottom:1rem;">Favorites ❤️</h2>
+        
+        <div id="wishlist-items-list" style="max-height:300px; overflow-y:auto;">
+            <p style="text-align:center; padding:2rem; font-size:1.4rem; color:#999;">There is no product you like yet.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+
 </body>
 </html>

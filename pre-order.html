@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+    <!--font style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- header section starts-->
+    <header>
+
+        <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">Luvia<span>.</span></a>
+
+    <nav class="navbar">
+        <a href="index.html#home">home</a>
+        <a href="index.html#about">about</a>
+        <a href="index.html#products">products</a>
+        <a href="index.html#message">message</a>
+        <a href="index.html#review">review</a>
+        <a href="index.html#contact">contact</a>
+    </nav>
+    
+
+    <div class="icons">
+    <a href="index.html#wishlist" class="fas fa-heart"></a>
+    
+    <a href="javascript:void(0)" class="fas fa-shopping-cart" style="position:relative;" onclick="toggleCart()">
+        <span id="cart-count" class="badge" style="display:none;">0</span>
+    </a>
+    
+    <a href="#" class="fas fa-user"></a>
+</div>
+     </header>
+    
+
+
+
+    <!--  header section end -->
+
+
+    <!---------Pre-order---------->
+<section class="preorder-container" style="padding-top: 15rem; display: flex; gap: 3rem; max-width: 1300px; margin: 0 auto; align-items: flex-start;">
+    
+    <aside class="sidebar" style="flex: 0 0 280px; padding: 2.5rem; background: #fff; border: 1px solid #eee; border-radius: 1rem; position: sticky; top: 10rem;">
+        <h3 style="font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--pink); padding-bottom: 1rem;">Product filter</h3>
+        
+        <div class="filter-group" style="margin-bottom: 3rem;">
+            <h4 style="font-size: 1.7rem; margin-bottom: 1.2rem; color: #333;">special source</h4>
+            <label style="display: block; font-size: 1.4rem; color: #666; margin-bottom: 1rem; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Alps (cold)</label>
+            <label style="display: block; font-size: 1.4rem; color: #666; margin-bottom: 1rem; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Japanese organic garden</label>
+            <label style="display: block; font-size: 1.4rem; color: #666; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> 100% handmade craftsmanship</label>
+        </div>
+
+        <div class="filter-group" style="margin-bottom: 3rem;">
+            <h4 style="font-size: 1.7rem; margin-bottom: 1.2rem; color: #333;">Suitable for the occasion</h4>
+            <label style="display: block; font-size: 1.4rem; color: #666; margin-bottom: 1rem; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Marriage (Surprise)</label>
+            <label style="display: block; font-size: 1.4rem; color: #666; margin-bottom: 1rem; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Premium Anniversary</label>
+            <label style="display: block; font-size: 1.4rem; color: #666; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Thank you gifts for adults</label>
+        </div>
+
+        <div class="filter-group">
+            <h4 style="font-size: 1.7rem; margin-bottom: 1.2rem; color: #333;">difficulty in organizing</h4>
+            <label style="display: block; font-size: 1.4rem; color: #666; margin-bottom: 1rem; cursor: pointer;"><input type="radio" name="lvl" style="margin-right: 10px;"> Masterpiece level</label>
+            <label style="display: block; font-size: 1.4rem; color: #666; cursor: pointer;"><input type="radio" name="lvl" style="margin-right: 10px;"> Refined level (moderate)</label>
+        </div>
+    </aside>
+
+    <div class="products-content" style="flex: 1;">
+        <h1 class="heading" style="text-align: left; padding-left: 1rem; margin-bottom: 3rem;"> <span>Limited Edition</span> Pre-order </h1>
+      
+
+        <div class="box-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
+            
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (37).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Golden Eternal Vase</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">Made from real 24K rose gold plated from the highest sources.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $49.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$70.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Reserve today: receive product on February 14th.</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i> Last 2 days left to reserve.</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+
+
+           
+            <!-------------------------------------------------------->
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (34).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Midnight Blue Rose</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">Blue roses imported from Holland It represents an impossible love.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $35.00 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$60.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Reserve today: receive product on February 12th.</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-magic"></i> Plus a special hand-written business card.</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+
+            <!------------------------------------------------------>
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (27).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Eternal Crimson</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">A love so deep it transcends time. These roses represent a soulmate connection that never fades.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $39.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$50.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Today: Receive the product on February 14th.</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i> last day</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+            <!-------------------------------------------------------->
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (20).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Starlight Serenade</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">Like stars in the night sky, this bouquet represents a silent promise to always protect and cherish your partner’s heart.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $59.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$120.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Today: Receive the product on February 1th. </p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i>   Last 5 days left to reserve.</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+            <!-------------------------------------------------------->
+
+            <!------------------------------------------------------>
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (12).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Velvet Eclipse</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">The beauty of a "forbidden" love. Deep, dark, and elegant, it speaks of a love that is hidden from the world but burns intensely.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $24.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$50.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Today: Receive the product on February 14th.</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i> Last 3 days left to reserve.</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+            <!-------------------------------------------------------->
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (24).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Golden Hour Glow</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">A celebration of joy and friendship that turned into something more. It's like sunshine in a vase.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $32.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$49.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Today: Receive the product on February 8th.</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i> Last 2 days left to reserve.</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+
+            <!------------------------------------------------------>
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (28).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Twilight Orchid</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">For a love that heals. This set is designed to soothe the soul and say, "I am here for you, through everything.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $29.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$52.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Today: Receive the product on February 5th..</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i> Last days</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+            <!-------------------------------------------------------->
+            <!------------------------------------------------------>
+            <div class="box" style="border: 1px solid #eee; padding: 1.5rem; position: relative; background: #fff; border-radius: 1rem;">
+                <span style="background: var(--black); color: #fff; padding: 0.5rem 1.2rem; position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; font-size: 1.2rem; border-radius: 0.5rem;">Pre-order</span>
+                
+                <div class="image" style="height: 35rem; overflow: hidden; border-radius: 0.5rem; position: relative;">
+                    <img src="imges/gift set1/T1 (23).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    <div class="hover-icons" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 1rem; background: rgba(255,255,255,0.8); padding: 0.8rem 1.5rem; border-radius: 5rem; backdrop-filter: blur(5px);">
+                        <a href="javascript:void(0)" onclick="this.firstChild.classList.toggle('fas'); this.firstChild.classList.toggle('far');" style="color: #e91e63; font-size: 1.8rem;"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" onclick="handleAddToCart(this)" style="color: var(--black); font-size: 1.8rem;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:void(0)" onclick="alert('Product link shared!')" style="color: #3498db; font-size: 1.8rem;"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="content" style="padding-top: 1.5rem;">
+                    <h4 style="font-size: 2.2rem; color: #333;">Scarlet Symphony</h4>
+                    <p style="font-size: 1.4rem; color: #666; margin: 0.8rem 0; line-height: 1.6;">A tribute to a love that was brief but changed your life forever. Beautiful, bold, and hauntingly poetic.</p>
+                    <div class="price" style="font-size: 2.4rem; color: var(--pink); font-weight: bold;"> $29.99 <span style="font-size: 1.6rem; color: #999; text-decoration: line-through;">$72.00</span></div>
+                    
+                    <div class="order-input" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; gap: 1rem;">
+                        <button onclick="var i=this.nextElementSibling; if(i.value>1)i.value--;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">-</button>
+                        <input type="number" value="1" min="1" style="width: 4rem; text-align: center; font-size: 1.6rem; border: none; font-weight: bold;" readonly>
+                        <button onclick="this.previousElementSibling.value++;" style="width:3rem; height:3rem; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer;">+</button>
+                    </div>
+
+                    <div style="background: #fff5f7; padding: 1.2rem; border-radius: 0.8rem; margin-top: 1.2rem; border: 1px dashed var(--pink);">
+                        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold;">Today: Receive the product on February 5th..</p>
+                        <p style="font-size: 1.2rem; color: #777; margin-top: 0.5rem;"><i class="fas fa-clock"></i> Last days</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="handleAddToCart(this)" class="btn" style="display: block; width: 100%; text-align: center; margin-top: 1.5rem; background: var(--black); color: #fff; padding: 1rem; font-size: 1.6rem; border-radius: 0.5rem;">Book now</a>
+                </div>
+            </div>
+            <!-------------------------------------------------------->
+        
+
+<!------------------รวมยอด----------------->
+<div id="preorder-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:4000; justify-content:center; align-items:center;">
+    <div style="background:#fff; width:95%; max-width:500px; padding:2rem; border-radius:1.5rem; position:relative; max-height:80vh; display:flex; flex-direction:column;">
+        
+        <span onclick="toggleCart()" style="position:absolute; top:1.5rem; right:1.5rem; font-size:3rem; cursor:pointer; color:#999; line-height:1;">&times;</span>
+        
+        <h2 style="font-size:2.4rem; color:var(--pink); margin-bottom:2rem; border-bottom:2px solid #f5f5f5; padding-bottom:1rem;">Pre-order basket 🌸</h2>
+        
+        <div id="preorder-items-list" style="overflow-y:auto; flex:1; padding-right:0.5rem;">
+            </div>
+
+        <div style="margin-top:2rem; border-top:2px solid #f5f5f5; padding-top:1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:2.2rem; font-weight:bold;">
+                <span>Grand total:</span>
+                <span id="preorder-total-price" style="color:var(--pink);">$0.00</span>
+            </div>
+            <button onclick="goToCheckout()" class="btn" style="width:100%; margin-top:2rem; background:var(--black); color:#fff; padding:1.5rem; font-size:1.8rem; border-radius:1rem; cursor:pointer; border:none;">Continue (write card)</button>
+        </div>
+    </div>
+</div>
+</section>
+
+
+ <!--  footer section starts   -->
+
+    <section class="simple-footer">
+    <div class="footer-line"></div> <div class="credit-text">
+        created by <span>kheehaknai. web designer | all rights reserved 🌸</span> 
+    </div>
+</section>
+
+    <!--  footer section ends   -->
+
+    
+<script>
+// ฟังก์ชันนี้จะสั่งให้หน้าต่างตะกร้าเด้งขึ้นมา และวาดรายการสินค้าลงไป
+function toggleCart() {
+    const modal = document.getElementById('preorder-modal');
+    if (!modal) return;
+    
+    if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'flex';
+        renderPreOrderCart(); // <--- คำสั่งนี้แหละครับที่ทำให้รายการสินค้าโผล่มา
+    } else {
+        modal.style.display = 'none';
+    }
+}
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

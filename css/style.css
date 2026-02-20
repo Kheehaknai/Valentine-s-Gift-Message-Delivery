@@ -532,7 +532,7 @@ header .fa-bars {
 /***********************end******************************/
 
 
-/*********************Event & Story start********************/
+/*****************Event & Story start*****************/
 .special-event {
     background: #fff;
     padding: 5rem 9%;
@@ -570,9 +570,7 @@ header .fa-bars {
     overflow: hidden;
 }
 
-/* ถ้าอยากลองเป็นสีเขียวพาสเทล ให้เปลี่ยนบรรทัด background เป็น:
-background: linear-gradient(145deg, #ffffff, #f0fdf4);
-*/
+
 
 /* เพิ่มลูกเล่น "แสง" เวลา Hover (เมาส์ชี้) */
 .event-content:hover {
@@ -684,8 +682,571 @@ background: linear-gradient(145deg, #ffffff, #f0fdf4);
     background: #333 !important;
 }
 
+/* ตกแต่งป้ายประกาศ (Discount Tag) */
+.discount-tag {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    z-index: 10;
+    padding: 1rem 1.8rem; /* เพิ่มพื้นที่ให้ข้อความ 2 บรรทัด */
+    color: #fff;
+    background: rgba(232, 67, 147, 0.75); 
+    backdrop-filter: blur(.8rem); 
+    border: .15rem solid rgba(255, 255, 255, 0.4);
+    border-radius: 1.5rem; /* มนกว่าเดิมเพื่อความน่ารัก */
+    box-shadow: 0 .8rem 2rem rgba(232, 67, 147, 0.2);
+    
+    display: flex;
+    flex-direction: column; /* จัดให้ข้อความเรียงลงมา */
+    align-items: center;
+    gap: .2rem;
+    
+    font-size: 1.6rem; /* ขนาดตัวลดราคา */
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: flyerIn 1s ease-out;
+}
 
+/* ตกแต่งข้อความ "หมดโปร" (คลาส P ที่เพิ่มใหม่) */
+.promo-expire {
+    font-size: 1.1rem; /* ตัวเล็กๆ น่ารัก */
+    font-weight: 400;
+    color: #ffeef2; /* สีขาวอมชมพูจางๆ */
+    text-transform: none; /* ไม่ต้องเป็นตัวพิมพ์ใหญ่ทั้งหมด */
+    letter-spacing: .05rem;
+    margin: 0;
+    white-space: nowrap; /* ป้องกันข้อความตัดบรรทัด */
+    border-top: .1rem solid rgba(255, 255, 255, 0.2); /* เส้นคั่นบางๆ */
+    padding-top: .3rem;
+    margin-top: .3rem;
+    font-style: italic;
+}
+
+/* ทำให้ป้ายกระพริบเบาๆ ดึงดูดสายตา */
+@keyframes flyerIn {
+    0% { transform: translateY(-2rem) rotate(-10deg); opacity: 0; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+/* เอฟเฟกต์เพิ่มเติมเมื่อ Hover การ์ดใบใหญ่ */
+.gift-card:hover .discount-tag {
+    background: rgba(232, 67, 147, 0.9);
+    transform: scale(1.05) rotate(-2deg); /* เอียงนิดๆ เวลา hover ให้ดูเหมือนป้ายสั่น */
+    box-shadow: 0 1rem 2.5rem rgba(232, 67, 147, 0.4);
+}
+
+/* จัดสไตล์ Class P ที่ขอเพิ่มไว้ (เตรียมพร้อมรับภาษา) */
+.gift-info p {
+    font-size: 1.3rem;
+    color: #666;
+    padding: .5rem 1rem;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic; /* เพิ่มความละมุน */
+}
+
+
+/********* สไตล์สำหรับ Mood Popup ***********/
+.mood-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10002;
+}
+
+.mood-content {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mood-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.mood-item {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.mood-item:hover { transform: scale(1.2); }
+
+.mood-item span { font-size: 4rem; display: block; }
+
+.mood-item p { 
+    margin-top: 0.5rem; 
+    font-size: 1.4rem; 
+    color: #d63384;
+    font-weight: bold;
+}
+
+.close-mood {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #ccc;
+}
 /***********************end******************************/
+
+
+
+
+
+/***********************Gift Sets************************/
+/* คอนเทนเนอร์หลัก */
+.gift-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 2.5rem; /* เพิ่มช่องว่างอีกนิดให้ดูไม่เบียด */
+    padding: 3rem 0;
+}
+
+
+.special-gifts h4 {
+    color: var(--pink);
+}
+
+
+/* ตกแต่งการ์ดให้ฟรุ้งฟริ้ง */
+.gift-card {
+    background: #fff;
+    border-radius: 1rem; /* มนพิเศษเพื่อความน่ารัก */
+    padding: 1.5rem;
+    border: .2rem solid #fff0f5; /* ขอบสีชมพูจางๆ */
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* จัดฟอนต์ทุกอย่างให้อยู่ตรงกลาง */
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 40rem;
+}
+
+/* เอฟเฟกต์เวลาเอาเมาส์วาง (Action ฟรุ้งฟริ้ง) */
+.gift-card:hover {
+    transform: translateY(-1rem) scale(1.02);
+    border-color: var(--pink);
+    /* เงาสีชมพูฟุ้งๆ เหมือนมีออร่าแห่งความรัก */
+    box-shadow: 0 1.5rem 3rem rgba(232, 67, 147, 0.15);
+}
+
+.gift-card .image-box {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* เอฟเฟกต์ภาพฟุ้งๆ */
+.gift-card .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+
+
+.gift-card:hover .image-box img {
+    filter: brightness(1.05); /* ให้รูปดูสว่างขึ้นนิดนึงเวลา hover */
+}
+
+/* --- ปรับแต่งความอ้วนใหญ่ (BIG) --- */
+.big-gift {
+    grid-column: span 2;
+}
+
+.big-gift .image-box {
+    height: 42rem; 
+    
+
+}
+
+.big-gift h3 {
+    font-size: 2.5rem; /* ขยายขนาดหัวข้อตัวใหญ่ */
+    color: var(--pink);
+    font-family: 'Playfair Display', serif; /* ใช้ฟอนต์หัวข้อที่ดูหรูหรา */
+    margin: 0.3rem 0; /* บีบระยะห่างข้อความให้ชิดขึ้น */
+}
+
+/* --- ปรับแต่งตัวเล็ก (SMALL) --- */
+.small-gift {
+    grid-column: span 1;
+}
+
+.small-gift .image-box {
+    height: 40rem; /* ยิ่งเพิ่มเลขนี้ รูปจะยิ่งยาวลงมาข้างล่างครับ */
+    margin-bottom: 1rem; /* ลดระยะห่างระหว่างรูปกับข้อความให้เหลือพื้นที่นิดเดียว */
+}
+
+
+.small-gift h4 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0.3rem 0; /* บีบระยะห่างข้อความให้ชิดขึ้น */
+}
+
+.small-gift .gift-info span {
+    font-size: 1.6rem;
+}
+
+/* ส่วนข้อมูลของขวัญ */
+.gift-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* จัดสไตล์ราคา */
+.gift-info span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--pink);
+    display: block;
+}
+
+/* --- Class P ที่เตรียมไว้ให้ (สำหรับคำอธิบายเพิ่มเติม) --- */
+.gift-info p {
+    font-size: 1.4rem;
+    color: #777;
+    line-height: 1.5;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+    display: none; /* ซ่อนไว้ก่อน ถ้าคุณใส่ <p> ใน HTML เมื่อไหร่ ให้แก้เป็น block หรือ flex นะครับ */
+}
+
+/* ทำให้ปุ่ม Cart ฟุ้งๆ เวลา hover */
+.gift-card .icons .cart-btn {
+    background: var(--pink);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    font-size: 1.4rem;
+    box-shadow: 0 0.5rem 1rem rgba(232, 67, 147, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .gift-grid-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .big-gift, .small-gift {
+        grid-column: span 2;
+    }
+    .big-gift .image-box {
+        height: 35rem;
+    }
+}
+
+
+
+
+/*********************Gift Sets end**********************/
+
+
+
+/********************Digital Love Letter***************/
+
+
+
+
+/* จัดการพื้นที่โดยรวมให้ดูเต็มขึ้น */
+.letter-guide-section {
+    padding: 4rem 2rem;
+    text-align: center; /* จัดทุกอย่างให้อยู่ตรงกลาง */
+    background: #fffafa; /* สีชมพูจางมากๆ ให้ดูละมุน */
+    border-radius: 3rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #d63384; /* สีเดียวกับปุ่ม Create A Note */
+    margin-bottom: 3rem;
+}
+
+/* จัดวางการ์ดขั้นตอน */
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap; /* รองรับมือถือ */
+}
+
+.step-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(214, 51, 132, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-10px); /* มีลูกเล่นเวลาเอาเมาส์วาง */
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: #d63384;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem;
+}
+
+.step-card h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.step-card p {
+    color: #777;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* ปรับตำแหน่งปุ่ม Create A Note ให้อยู่กึ่งกลางเสมอ */
+.main-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#createNoteBtn {
+    padding: 1.5rem 4rem;
+    font-size: 1.2rem;
+    border-radius: 5rem;
+    /* คงค่าเดิมที่คุณมีไว้ */
+}
+
+/********************แนะนำขั้นตอน***********************/
+.letter-modal {
+    position: fixed; /* ต้องเป็น fixed เพื่อให้ลอยค้างหน้าจอ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* พื้นหลังดำจางๆ */
+    display: none; /* เริ่มต้นให้ซ่อน */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* ใส่เลขเยอะๆ เพื่อให้ชนะทุกคลาสในหน้าเว็บ */
+}
+
+/* ปรับให้ขนาดกระดาษ A4 ดูสวยงามตามรูปที่คุณต้องการ */
+/* 2. ตัวหน้าต่างจดหมาย (Container) */
+.letter-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 3rem;
+    width: 95%;
+    max-width: 1000px;
+    position: relative;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2rem 5rem rgba(0,0,0,0.2);
+}
+
+.letter-modal.active .letter-container {
+    transform: translateY(0) scale(1); /* เด้งเข้ามาเบาๆ */
+}
+
+
+/* 3. ปุ่มกากบาท (เด่นชัดและสวยงาม) */
+.close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 45px;
+    height: 45px;
+    background: #000000; /* สีชมพูเดียวกับปุ่ม Create */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid #fff;
+    z-index: 100;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    background: #ff48a4;
+}
+
+
+
+/* 4. ปรับแต่งฟอนต์และแถบเลือก (Selector) */
+.letter-selector h3 {
+    font-family: 'Dancing Script', cursive; /* ฟอนต์สวยๆ */
+    color: #e14a96;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ตกแต่ง Scrollbar ให้ดูมินิมอล */
+.letter-selector::-webkit-scrollbar {
+    width: 6px;
+}
+.letter-selector::-webkit-scrollbar-thumb {
+    background: #ff77bd;
+    border-radius: 10px;
+}
+
+.letter-wrapper { display: flex; gap: 2rem; }
+
+/* แถบเลือกแบบ 10 รูป */
+.letter-selector { width: 30%; overflow-y: auto; max-height: 500px; }
+
+
+.style-grid img {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    border-radius: 1.5rem;
+    border: 3px solid #fdf2f7;
+    transition: all 0.3s ease;
+    filter: grayscale(20%); /* ให้ภาพที่ยังไม่เลือกดูดรอปลงนิดหน่อย */
+}
+
+.style-grid img:hover, .style-grid img.selected {
+    border-color: #d63384;
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.2);
+}
+
+
+.letter-input {
+    width: 100%; height: 80%;
+    background: transparent; border: none;
+    font-family: 'Dancing Script', cursive; /* ฟอนต์ลายมือ */
+    font-size: 2rem; line-height: 1.6;
+    resize: none; outline: none;
+    color: #555;
+}
+
+.btn {
+    position: relative;
+    z-index: 999; 
+    pointer-events: auto !important; /* บังคับให้รับแรงคลิกได้เสมอ */
+    cursor: pointer;
+}
+
+
+
+
+.letter-paper {
+    width: 70%; 
+    height: 500px;
+    background-image: url('imges/card/c1 (1).jpg'); /* ใส่รูปเริ่มต้นไว้ก่อน */
+    background-size: 100% 100%; /* ให้รูปยืดพอดีกรอบ */
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease; /* เพิ่มความสมูทเวลาเปลี่ยนรูป */
+
+    /* ใช้ Flexbox จัดการทุกอย่างในกระดาษให้ดิ่งลงมาตรงกลาง */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดกลางแนวตั้ง */
+    align-items: center;     /* จัดกลางแนวนอน */
+    padding: 2rem;           /* เว้นขอบกันตัวหนังสือติดขอบกระดาษ */
+    position: relative;
+}
+
+
+/* ช่องเขียนข้อความ */
+.letter-input {
+    width: 80%;              /* บีบความกว้างให้แคบลงเพื่อให้ดูอยู่กลางกระดาษ */
+    height: 50%;             /* ปรับความสูงให้พอดีกับช่วงกลางของรูปจดหมาย */
+    background: transparent;
+    border: none;
+    font-family: 'Dancing Script', cursive; 
+    font-size: 1.8rem;
+    line-height: 2;          /* เพิ่มระยะบรรทัดให้ตรงกับเส้นในรูป (ถ้ามี) */
+    resize: none;
+    outline: none;
+    color: #555;
+    text-align: center;      /* ทำให้ตัวหนังสือเริ่มพิมพ์จากตรงกลาง */
+    margin-bottom: 2rem;     /* เว้นระยะห่างจากปุ่มด้านล่าง */
+}
+
+/* กลุ่มปุ่มบันทึก */
+.btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* จัดปุ่มให้อยู่กึ่งกลางหน้ากระดาษ */
+}
+
+.btn-group .btn {
+    padding: 1rem 3rem;      /* เพิ่มขนาดปุ่มให้ดูเต็มและกดง่ายขึ้น */
+}
+
+
+/*----------------สำหรับกล่องของขวัญเด้ง--------------*/
+.success-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* เริ่มต้นให้ซ่อนไว้ */
+    justify-content: center;
+    align-items: center;
+    z-index: 10001; /* อยู่เหนือทุกอย่าง */
+}
+
+.success-content {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* เพิ่มลูกเล่นให้กล่องเด้งออกมาจากจุดเล็กๆ */
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gift-icon {
+    width: 120px;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+/***************Digital Love Letter end*************/
+
+
 
 /********************** review ***************************/
 .review .box-container {
@@ -822,28 +1383,149 @@ background: linear-gradient(145deg, #ffffff, #f0fdf4);
 /***********************end******************************/
 
 
+/*********************** ตระกร้า *********************/
+/* การตั้งค่าหน้าต่าง Modal ตะกร้า */
+.cart-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    display: none; /* ซ่อนไว้ก่อน */
+    justify-content: center;
+    align-items: center;
+    z-index: 10005; /* ให้สูงกว่าทุกอย่าง */
+}
+
+.cart-wrapper {
+    background: #fff;
+    width: 95%;
+    max-width: 1100px;
+    border-radius: 3rem;
+    padding: 3rem;
+    position: relative;
+    animation: cartFadeUp 0.4s ease;
+}
+
+@keyframes cartFadeUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-cart {
+    position: absolute;
+    top: 2rem; right: 2.5rem;
+    font-size: 4rem;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-cart:hover { color: var(--pink); transform: rotate(90deg); }
+
+.cart-container-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.cart-items-scroll {
+    flex: 1 1 50rem;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 1.5rem;
+}
+
+/* ดีไซน์รายการในตะกร้า */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.cart-item img {
+    height: 9rem; width: 9rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+
+.cart-item .content h3 { font-size: 1.8rem; color: #333; }
+.cart-item .content .price { font-size: 1.6rem; color: var(--pink); font-weight: bold; }
+.cart-item .note-details { font-size: 1.2rem; color: #777; margin: .5rem 0; }
+
+.cart-item .fa-times {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-size: 1.8rem; color: #ccc; cursor: pointer;
+}
+
+/* สรุปยอดเงิน */
+.cart-summary {
+    flex: 1 1 30rem;
+    background: #fdf2f7;
+    padding: 2.5rem;
+    border-radius: 2.5rem;
+}
+
+.summary-row { display: flex; justify-content: space-between; font-size: 1.8rem; margin-bottom: 1.2rem; }
+.empty-msg { text-align: center; font-size: 1.8rem; color: #999; padding: 4rem 0; width: 100%; }
+/**************************************************/
+
+
+
+
+/*****************บันทึกรายการลงตระกร้า******************/
+.icons a {
+    position: relative;
+}
+
+.icons a .badge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.8rem;
+    background: var(--pink);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50%;
+    display: none; /* ซ่อนไว้ก่อนมีของ */
+}
+/**************************************************/
+
 /****************************footer********************/
 .footer .box-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    flex-wrap: wrap; /* ยอมให้ลงแถวใหม่ได้ในมือถือ */
+    gap: 2rem;       /* เพิ่มช่องว่างระหว่างคอลัมน์ให้ดูไม่แน่นไป */
+    align-items: flex-start;
 }
 
 .footer .box-container .box {
-    flex: 1 1 25rem;
+    /* ปรับจาก 25rem เป็นการคำนวณ % เพื่อให้ลงตัว 4 คอลัมน์ */
+    flex: 1 1 calc(23% - 1rem); 
+    min-width: 20rem; /* ป้องกันไม่ให้แคบจนตัวหนังสือแตก */
 }
 
-.footer .box-container .box h4{
+/* ปรับแต่งหัวข้อ Contact Info ให้สวยงามเหมือนอันอื่น */
+.footer .box-container .box h4 {
     color: #333;
-    font-size: 2.5rem;
-    padding: 1rem 0;
+    font-size: 2.2rem;
+    padding: 1.5rem 0;
+    font-weight: 600;
 }
 
 .footer .box-container .box a {
     display: block;
     color: #666;
     font-size: 1.5rem;
-    padding: 1rem 0;
+    padding: .8rem 0;
+    text-transform: none; /* ป้องกันอีเมลกลายเป็นตัวพิมพ์ใหญ่ทั้งหมด */
 }
 
 .footer .box-container .box a:hover {
@@ -869,11 +1551,156 @@ background: linear-gradient(145deg, #ffffff, #f0fdf4);
     color:var(--pink) ;
 }
 
+.footer .payment-methods {
+    width: 100%;             /* ยืดเต็มพื้นที่เพื่อให้จัดกลางได้จริง */
+    text-align: center; /* จัดรูปภาพให้อยู่ตรงกลาง */
+    padding: 2rem 0;     /* เพิ่มระยะห่างบน-ล่าง */
+    justify-content: center;  /* จัดรูปภาพให้อยู่กึ่งกลางแนวนอนเสมอ */
+    
+}
+
+
+
+.footer .payment-methods img {
+    max-width: 90%;          /* ป้องกันไม่ให้รูปใหญ่เกินขอบจอเวลาดูในมือถือ */
+    height: auto;            /* รักษาอัตราส่วนรูปภาพไม่ให้เบี้ยว */
+    
+    /* ตั้งขนาดรูปภาพที่ต้องการ (ปรับตัวเลข 30rem นี้ได้ตามความชอบครับ) */
+    width: 100rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
 
 /***********************end******************************/
 
+/*********************simple-footer********************/
+/* ส่วนท้ายหน้าพรีออเดอร์ */
+.simple-footer {
+    padding: 3rem 9%;
+    background: #fff; /* หรือใช้สีเดียวกับพื้นหลังหน้าเว็บคุณ */
+    text-align: center;
+}
+
+.simple-footer .footer-line {
+    height: 0.1rem;
+    background: rgba(0,0,0,0.05); /* เส้นบางๆ */
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.simple-footer .credit-text {
+    font-size: 1.6rem;
+    color: #5c5c5c;
+    font-weight: 500;
+}
+
+.simple-footer .credit-text span {
+    color: #f145a9; /* สีชมพูเดียวกับปุ่มพรีออเดอร์ */
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* ป้องกันการเบี้ยวในมือถือ */
+@media (max-width: 768px) {
+    .simple-footer .credit-text {
+        font-size: 1.4rem;
+        padding: 0 2rem;
+    }
+}
+
+/*********************end***************************/
 
 
+
+/*****************Gift Finder Logic******************/
+/* ทำให้กล่องสินค้าดูมีมิติเวลาเอาเมาส์ไปวาง */
+.products .box-container .box {
+    transition: all .3s ease;
+    overflow: hidden; /* กันรูปล้นเวลา Zoom */
+}
+
+.products .box-container .box:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-color: var(--pink);
+}
+
+.products .box-container .box .image img {
+    transition: transform .5s linear;
+}
+
+.products .box-container .box:hover .image img {
+    transform: scale(1.1); /* รูปขยายขึ้นนิดนึงเวลาจ้อง */
+}
+
+/*****************ends******************/
+
+
+
+
+/*****--------------ในส่วนของหน้าที่สอง----------------******/
+/**************Pre-order************/
+/* การจัด Layout ของสินค้าให้เป็นระเบียบ */
+.preorder-container .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* เอฟเฟกต์ตอนเลื่อนเมาส์โดนกล่องสินค้า */
+.preorder-container .box {
+    background: #fff;
+    transition: 0.3s;
+}
+
+.preorder-container .box:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+/* ปรับแต่ง Sidebar ให้ดูทันสมัย */
+.sidebar label {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sidebar label:hover {
+    color: var(--pink);
+    padding-left: 5px;
+}
+/* เมื่อเลื่อนเมาส์ไปที่กล่อง image ให้ปุ่มไอคอนแสดงขึ้นมา */
+.box .image .hover-icons {
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.box:hover .image .hover-icons {
+    opacity: 1;
+}
+
+/* ตกแต่งปุ่ม + - ของ Order */
+.order-input button:hover {
+    background: var(--pink) !important;
+    color: #fff;
+    border-color: var(--pink) !important;
+}
+
+
+/*********************end***********************/
+/* Responsive: ถ้าจอเล็กให้ Sidebar ไปอยู่ข้างบนแทน */
+@media (max-width: 768px) {
+    .preorder-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: none;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/**************ends************/
 
 
 
@@ -980,3 +1807,86 @@ background: linear-gradient(145deg, #ffffff, #f0fdf4);
     }
 }
 
+
+
+/**************Return Policy****************/
+/* Animation สำหรับไอคอนกล่องหมุนไปมา */
+@keyframes boxRotate {
+    0%, 100% { transform: rotate(-10deg) scale(1); }
+    50% { transform: rotate(10deg) scale(1.1); }
+}
+
+/* เพิ่มให้ Modal เด้งออกมาแบบ Scale Up */
+#serviceModal .cart-wrapper {
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/*********************************************/
+/* Wallet Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.6); 
+    z-index: 2000; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.wallet-container, .topup-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.wallet-icon { font-size: 5rem; color: #e91e63; margin-bottom: 1rem; }
+
+.coin-card {
+    background: #fff5f7;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin: 2rem 0;
+}
+
+.coin-card h1 { font-size: 4rem; color: #333; }
+
+.btn-topup, .btn-confirm {
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.btn-confirm { background: #e91e63; }
+.btn-cancel { background: none; border: none; color: #999; margin-top: 1rem; cursor: pointer; }
+
+.close-wallet { position: absolute; top: 1.5rem; right: 2rem; font-size: 2.5rem; cursor: pointer; }
+
+
+/****************ถ฿กใจปุ่มลอย*******************/
+.floating-wishlist {
+    transition: transform 0.3s ease;
+}
+
+.floating-wishlist:hover {
+    transform: scale(1.1); /* ขยายใหญ่ขึ้นนิดหน่อยเวลาเอาเมาส์วาง */
+}
+
+/* ปรับตำแหน่ง Modal ให้ไม่บังปุ่มลอยมากเกินไป */
+.modal {
+    z-index: 9999;
+}
